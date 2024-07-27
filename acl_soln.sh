@@ -1,10 +1,10 @@
 mkdir /accounting/
 mkdir /engineering/
 
-useradd userA && passwd
-useradd userB && passwd
-useradd userC && passwd
-useradd userD && passwd
+useradd userA && passwd userA
+useradd userB && passwd userB
+useradd userC && passwd userC
+useradd userD && passwd userD
 
 groupadd accounting
 groupadd accounting_head
@@ -41,3 +41,7 @@ setfacl -m g:engineering_head:rwx /engineering/
 # set permission for department heads
 setfacl -m g:accounting_head:r /engineering/
 setfacl -m g:engineering_head:r /accounting/
+
+# set permission for others
+chmod 770 accounting/
+chmod 770 engineering/
