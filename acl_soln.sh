@@ -15,12 +15,12 @@ groupadd engineering
 # cat /etc/group
 # cat /etc/passwd
 
-usermod -aG accounting userA
+usermod -aG accounting -s /bin/bash userA
 usermod -aG accounting_head userA
-usermod -aG accounting userB
-usermod -aG engineering userC
+usermod -aG accounting -s /bin/bash userB
+usermod -aG engineering -s /bin/bash userC
 usermod -aG engineering_head userC
-usermod -aG engineering userD
+usermod -aG engineering -s /bin/bash userD
 
 # su userD
 # mkdir accounting/
